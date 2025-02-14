@@ -1,2 +1,4 @@
-# termux-windows-10
-Run windows 10 using qemu emulator in termux
+# Installation 
+```
+apt update && apt upgrade -y && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/termux-windows-10/refs/heads/main/install | bash
+```
