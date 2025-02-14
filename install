@@ -1,0 +1,16 @@
+#!/PREFIX/bin/bash
+
+cd $HOME
+termux-wake-lock
+pkg install x11-repo qemu-system-x86_64 -y
+clear
+
+# Download file
+wget https://github.com/xiv3r/termux-windows-10/archive/refs/tags/win10.iso
+
+# Set qemu configuration 
+read -p "Select Size Of RAM In MB Ex 1GB = 1024 : " ram
+qemu-system-x86_64 -m $ram -cdrom win10.iso -vnc 127.0.0.1:2
+echo "[+] Server Is Running...."
+echo -e "Your Server IP is:\e[1;96m 127.0.0.1:2"
+
