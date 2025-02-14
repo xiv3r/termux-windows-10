@@ -6,7 +6,7 @@ pkg install x11-repo qemu-system-x86_64 -y
 clear
 
 # Download file
-wget https://github.com/xiv3r/termux-windows-10/archive/refs/tags/win10.iso
+# wget https://github.com/xiv3r/termux-windows-10/archive/refs/tags/win10.iso
 
 # Set qemu configuration 
 read -p "Allocate Size Of RAM ex: 1GB is = 1024 : " ram
