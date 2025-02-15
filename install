@@ -10,7 +10,8 @@ clear
 # wget https://github.com/xiv3r/termux-windows-10/archive/refs/tags/win10.iso
 
 # Set qemu configuration 
+read -p "Allocate Cpu Cores ex: 8 : " cpu
 read -p "Allocate Size Of RAM ex: 1GB is = 1024 : " ram
-qemu-system-x86_64 -m $ram -cdrom win10.iso -vnc 127.0.0.1:2 &
-echo "[*] Server Is Running..."
+echo "[*] VNC Server Is Running..."
 echo -e "Your VNC Server IP is:\e[1;96m 127.0.0.1:2"
+qemu-system-x86_64 -smp $cpu -m $ram -cdrom win10.iso -vnc 127.0.0.1:2 & pid=$!
