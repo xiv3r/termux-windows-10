@@ -28,7 +28,7 @@ custom_install() {
         echo "ISO file not found, exiting"
     else
         if [ ! -f "./qemu/uefi.fd" ]; then
-            wget -q --show-progress "" -O "./qemu/uefi.fd"
+            wget -q --show-progress "https://github.com/xiv3r/termux-windows-10/raw/refs/heads/main/uefi.fd" -O "./qemu/uefi.fd"
         fi
 
         if [ ! -f "./qemu/custom.qcow2" ]; then
@@ -58,10 +58,10 @@ alpine_install() {
     read -p "max cpu cores: " cpu
 
     if [ ! -f "./qemu/uefi.fd" ]; then
-        wget -q --show-progress "" -O "./qemu/uefi.fd"
+        wget -q --show-progress "https://github.com/xiv3r/termux-windows-10/raw/refs/heads/main/uefi.fd" -O "./qemu/uefi.fd"
     fi
     if [ ! -f "./qemu/alpine.qcow2" ]; then
-        wget -q --show-progress "" -O "./qemu/alpine.qcow2"
+        wget -q --show-progress "https://github.com/xiv3r/termux-windows-10/raw/refs/heads/main/uefi.fd" -O "./qemu/alpine.qcow2"
     fi
     clear
     qemu-system-aarch64 \
