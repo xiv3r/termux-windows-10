@@ -3,7 +3,7 @@
 cd $HOME
 
 termux-wake-lock
-pkg install x11-repo qemu-system-x86_64 elfutils alsa-lib jack gtk3 -y
+pkg install x11-repo qemu-system-x86_64 qemu-system-x86-64-headless elfutils alsa-lib jack gtk3 -y
 clear
 
 # Download file
