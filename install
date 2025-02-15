@@ -13,4 +13,4 @@ clear
 read -p "Allocate Size Of RAM ex: 2GB is = 2048 : " ram
 echo "[*] VNC Server Is Running..."
 echo -e "Your VNC Server IP is:\e[1;96m 127.0.0.1:1"
-qemu-system-x86_64 -machine virt,accel=tcg -smp cortex-a72 -m $ram -cdrom win10.iso -vnc 127.0.0.1:1 & pid=$!
+qemu-system-x86_64 -machine virt,accel=tcg -smp cortex-a72 -m $ram -bios qemu/uefi.fd -cdrom win10.iso -vnc 127.0.0.1:1 & pid=$!
