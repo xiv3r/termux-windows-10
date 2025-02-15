@@ -3,7 +3,7 @@
 cd $HOME
 
 termux-wake-lock
-pkg install root-repo x11-repo qemu-system-aarch64-headless qemu-system-x86-64-headless wget -y
+pkg install root-repo x11-repo qemu-utils qemu-system-aarch64-headless qemu-system-x86-64-headless wget -y
 clear
 
 # Download file
