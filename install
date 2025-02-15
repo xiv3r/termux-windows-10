@@ -17,9 +17,9 @@ echo "[*] VNC Server Is Running..."
 
 cat > $PREFIX/bin/win11 << EOF
 #!/data/data/com.termux/files/usr/bin/bash
-qemu-system-x86-64 -m $ram -cdrom win10.iso -vnc 127.0.0.1:1 & pid=$!
+qemu-system-x86_64 -m $ram -cdrom win10.iso -vnc 127.0.0.1:1 & pid=$!
 EOF
 chmod 755 $PREFIX/bin/win11
 
 echo -e "Your VNC Server IP is:\e[1;96m 127.0.0.1:1"
-qemu-system-x86-64 -m $ram -cdrom win10.iso -vnc 127.0.0.1:1 & pid=$!
+qemu-system-x86_64 -m $ram -cdrom win10.iso -vnc 127.0.0.1:1 & pid=$!
