@@ -3,14 +3,22 @@
 cd $HOME
 
 termux-wake-lock
-pkg install root-repo x11-repo qemu-utils qemu-system-aarch64 qemu-system-x86-64 -y
+termux-setup-storage
+pkg install root-repo x11-repo axel qemu-utils qemu-system-aarch64 qemu-system-x86-64 -y
 clear
 
 # Download file
-wget https://github.com/xiv3r/termux-windows-10/archive/refs/tags/win10.iso
+axel -a -n 1 -o win10.iso https://github.com/xiv3r/termux-windows-10/archive/refs/tags/win10.iso
+cp win10.iso storage/downloads
 
-# Set qemu configuration 
-read -p "Allocate Size Of RAM ex: 2GB is = 2048 : " ram
+# Set qemu configuration
+ read -p "Allocate Size Of RAM ex: 2GB is = 2048 : " ram
 echo "[*] VNC Server Is Running..."
+
+cat > $PREFIX/bin/win11 << EOF
+qemu-system-x86-64 -m $ram -cdrom win10.iso -vnc 127.0.0.1:1 & pid=$!
+EOF
+chmod 755 $PREFIX/bin/win11
+
 echo -e "Your VNC Server IP is:\e[1;96m 127.0.0.1:1"
 qemu-system-x86-64 -m $ram -cdrom win10.iso -vnc 127.0.0.1:1 & pid=$!
