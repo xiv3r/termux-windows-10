@@ -9,6 +9,10 @@ clear
 # Download file
 # wget https://github.com/xiv3r/termux-windows-10/archive/refs/tags/win10.iso
 
+# Bios
+mkdir -p bios
+wget -O bios/uefi.fd https://github.com/xiv3r/termux-windows-10/raw/refs/heads/main/uefi.fd
+
 # Set qemu configuration 
 read -p "Allocate Size Of RAM ex: 2GB is = 2048 : " ram
 echo "[*] VNC Server Is Running..."
